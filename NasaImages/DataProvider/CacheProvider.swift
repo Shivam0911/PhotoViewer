@@ -23,17 +23,16 @@ class CacheProvider: CacheProvidable {
         defaults.synchronize()
     }
     
-    func getData(for nasaObj: NasaImage, completion: (UIImage?, NasaImage?) -> Void) {
-        guard let imageData = defaults.value(forKey: nasaObj.hdurl) as? Data,
+    func getData(completion: (UIImage?, NasaImage?) -> Void) {
+        guard let nasaObject = defaults.retrieve(object: NasaImage.self, fromKey: UserDefaultsKey.nasaobject.rawValue) else {
+            completion(nil, nil)
+            return
+        }
+        guard let imageData = defaults.value(forKey: nasaObject.hdurl) as? Data,
               let image = UIImage(data: imageData) else {
              completion(nil, nil)
             return
         }
-        
-        guard let nasaObject = defaults.retrieve(object: NasaImage.self, fromKey: UserDefaultsKey.nasaobject.rawValue) else {
-                completion(nil, nil)
-               return
-            }
         completion(image, nasaObject)
     }
 }

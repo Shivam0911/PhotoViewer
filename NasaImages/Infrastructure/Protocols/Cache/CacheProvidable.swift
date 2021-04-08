@@ -10,5 +10,5 @@ import UIKit
 
 protocol CacheProvidable {
     func saveImage(with: UIImage, for nasaObj: NasaImage)
-    func getData(for nasaObj: NasaImage, completion: (UIImage?, NasaImage?) -> Void)
+    func getData(completion: (UIImage?, NasaImage?) -> Void)
 }

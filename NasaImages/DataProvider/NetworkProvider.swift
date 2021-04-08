@@ -7,18 +7,39 @@
 
 import Foundation
 import UIKit
+import Network
+
+enum NetworkError {
+    case notConnected
+    case unknown
+}
 
 class NetworkProvider: Providable {
     
-    func get<T: Codable>(with params: JSONDictionary, _ type: T.Type, completion: @escaping (T?) -> Void) {
+    let monitor = NWPathMonitor()
+    var isConnectedToInternet: Bool = false
+    let queue = DispatchQueue(label: "Internet_Monitor")
+
+    init() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            self?.isConnectedToInternet = path.status == .satisfied
+        }
+        monitor.start(queue: queue)
+    }
+    func get<T: Codable>(with params: JSONDictionary, _ type: T.Type, completion: @escaping (T?, NetworkError?) -> Void) {
+        if !isConnectedToInternet {
+            DispatchQueue.main.async {
+                completion(nil, NetworkError.notConnected)
+            }
+        }
         let success = { (result: T?) in
             DispatchQueue.main.async {
-                completion(result)
+                completion(result, nil)
             }
         }
         let failure = {
             DispatchQueue.main.async {
-                completion(nil)
+                completion(nil, .unknown)
             }
         }
         guard let url = URL(string: baseUrl+route(for: type)),

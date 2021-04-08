@@ -9,5 +9,6 @@ import UIKit
 
 protocol NasaImageProvidable {
     var provider: Providable { get  }
+    var showingLastImageCallback: (() -> Void)? { get set }
     func getNasaImage(with params: JSONDictionary, completion: @escaping (NasaImage?, UIImage?) -> Void)
 }

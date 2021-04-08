@@ -13,7 +13,6 @@ class ImageDetailViewController: UIViewController, ImageDetailViewable {
   
     @IBOutlet internal weak var photoImageView: UIImageView!
     @IBOutlet internal weak var descriptionLabel: UILabel!
-    
 
     override func loadView() {
         super.loadView()
@@ -31,6 +30,21 @@ class ImageDetailViewController: UIViewController, ImageDetailViewable {
             self?.descriptionLabel?.text = nasaModel.explanation
             self?.title = nasaModel.title
             self?.photoImageView?.image = downloadedImage
+        }
+        viewModel?.showingLastImageCallback = { [weak self] in
+            let alertMsg = "Alert"
+            let messgage = "We are not connected to the internet, showing you the last image we have."
+            let messageVC = UIAlertController(title: alertMsg,
+                                              message: messgage ,
+                                              preferredStyle: .alert)
+            self?.present(messageVC, animated: true) {
+                Timer.scheduledTimer(withTimeInterval: 1,
+                                     repeats: false,
+                                     block: { (_) in
+                                        messageVC.dismiss(animated: true, completion: nil)})
+                
+            }
+            
         }
     }
 

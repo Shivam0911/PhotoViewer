@@ -10,7 +10,7 @@ import UIKit
 
 class  ImageDetailViewModel: ImageDetailViewModelable {
     var provider: NasaImageProvidable?
-    
+    var showingLastImageCallback: (() -> Void)?
     var dataSource: ((NasaImage?, UIImage?) -> Void)?
     
     init() {
@@ -26,6 +26,10 @@ class  ImageDetailViewModel: ImageDetailViewModelable {
         provider?.getNasaImage(with: parameters, completion: {  (nasaObj, nasaImage)  in
             self.dataSource!(nasaObj, nasaImage)
         })
+        
+        provider?.showingLastImageCallback = { [weak self] in
+            self?.showingLastImageCallback?()
+        }
     }
     
 }
