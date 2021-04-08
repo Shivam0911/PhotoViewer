@@ -27,6 +27,9 @@
 		C1AB2DAD261EBBE300EF42E6 /* ImageDetailViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DAC261EBBE300EF42E6 /* ImageDetailViewModelable.swift */; };
 		C1AB2DB5261EBCF300EF42E6 /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DB4261EBCF300EF42E6 /* ImageDetailViewModel.swift */; };
 		C1AB2DBA261EBE5C00EF42E6 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DB9261EBE5C00EF42E6 /* ApiKeys.swift */; };
+		C1AB2DC8261EC6D500EF42E6 /* CacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DC7261EC6D500EF42E6 /* CacheProvider.swift */; };
+		C1AB2DCE261EC70500EF42E6 /* CacheProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DCD261EC70500EF42E6 /* CacheProvidable.swift */; };
+		C1AB2DD9261ED13B00EF42E6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2DD8261ED13B00EF42E6 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		C1AB2DAC261EBBE300EF42E6 /* ImageDetailViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModelable.swift; sourceTree = "<group>"; };
 		C1AB2DB4261EBCF300EF42E6 /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 		C1AB2DB9261EBE5C00EF42E6 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		C1AB2DC7261EC6D500EF42E6 /* CacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProvider.swift; sourceTree = "<group>"; };
+		C1AB2DCD261EC70500EF42E6 /* CacheProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheProvidable.swift; sourceTree = "<group>"; };
+		C1AB2DD8261ED13B00EF42E6 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +129,9 @@
 		C1AB2D37261EA88200EF42E6 /* NasaImages */ = {
 			isa = PBXGroup;
 			children = (
-				C1AB2D7A261EAFA300EF42E6 /* Infrastructure */,
-				C1AB2D79261EAF8600EF42E6 /* DataProvider */,
 				C1AB2D6E261EAADE00EF42E6 /* Features */,
+				C1AB2D79261EAF8600EF42E6 /* DataProvider */,
+				C1AB2D7A261EAFA300EF42E6 /* Infrastructure */,
 				C1AB2D38261EA88200EF42E6 /* AppDelegate.swift */,
 				C1AB2D3A261EA88200EF42E6 /* SceneDelegate.swift */,
 				C1AB2D41261EA88300EF42E6 /* Assets.xcassets */,
@@ -201,6 +207,7 @@
 			children = (
 				C1AB2D8D261EB66B00EF42E6 /* NetworkProvider.swift */,
 				C1AB2D98261EB8DB00EF42E6 /* NasaImageProvider.swift */,
+				C1AB2DC7261EC6D500EF42E6 /* CacheProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 		C1AB2D7B261EAFB800EF42E6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C1AB2DCC261EC6E200EF42E6 /* Cache */,
 				C1AB2DA3261EBB9700EF42E6 /* ImageDetail */,
 				C1AB2D7D261EAFFA00EF42E6 /* Networking */,
 			);
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C1AB2D88261EB4F500EF42E6 /* URL.swift */,
+				C1AB2DD8261ED13B00EF42E6 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +275,14 @@
 				C1AB2DAC261EBBE300EF42E6 /* ImageDetailViewModelable.swift */,
 			);
 			path = ImageDetail;
+			sourceTree = "<group>";
+		};
+		C1AB2DCC261EC6E200EF42E6 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C1AB2DCD261EC70500EF42E6 /* CacheProvidable.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +421,7 @@
 				C1AB2D74261EACBF00EF42E6 /* NasaImage.swift in Sources */,
 				C1AB2DA5261EBBCF00EF42E6 /* ImageDetailViewable.swift in Sources */,
 				C1AB2DAD261EBBE300EF42E6 /* ImageDetailViewModelable.swift in Sources */,
+				C1AB2DD9261ED13B00EF42E6 /* UserDefaults.swift in Sources */,
 				C1AB2D9F261EBA6D00EF42E6 /* GlobalConstansts.swift in Sources */,
 				C1AB2D7F261EB00A00EF42E6 /* Providable.swift in Sources */,
 				C1AB2DB5261EBCF300EF42E6 /* ImageDetailViewModel.swift in Sources */,
@@ -411,7 +429,9 @@
 				C1AB2D3D261EA88200EF42E6 /* ImageDetailViewController.swift in Sources */,
 				C1AB2D99261EB8DB00EF42E6 /* NasaImageProvider.swift in Sources */,
 				C1AB2D8E261EB66B00EF42E6 /* NetworkProvider.swift in Sources */,
+				C1AB2DCE261EC70500EF42E6 /* CacheProvidable.swift in Sources */,
 				C1AB2D39261EA88200EF42E6 /* AppDelegate.swift in Sources */,
+				C1AB2DC8261EC6D500EF42E6 /* CacheProvider.swift in Sources */,
 				C1AB2D3B261EA88200EF42E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

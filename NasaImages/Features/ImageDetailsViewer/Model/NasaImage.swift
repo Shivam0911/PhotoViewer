@@ -5,6 +5,8 @@
 //  Created by Shivam Gaur (BLR GSS) on 08/04/21.
 //
 
+import Foundation
+
 // MARK: - NasaImage
 struct NasaImage: Codable {
     let date, explanation: String

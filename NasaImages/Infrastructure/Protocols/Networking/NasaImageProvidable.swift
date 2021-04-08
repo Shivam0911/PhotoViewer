@@ -8,6 +8,6 @@
 import UIKit
 
 protocol NasaImageProvidable {
-    var provider: Providable? { get set }
+    var provider: Providable { get  }
     func getNasaImage(with params: JSONDictionary, completion: @escaping (NasaImage?, UIImage?) -> Void)
 }
