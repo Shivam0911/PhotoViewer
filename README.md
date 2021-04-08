@@ -25,3 +25,5 @@ To run this just compile and build.
 4.UI Could be more neat
 
 5.Distribution of responsibility could be better.
+
+6. Testcases 
