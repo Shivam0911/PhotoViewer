@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct  ImageDetailViewModel: ImageDetailViewModelable {
+class  ImageDetailViewModel: ImageDetailViewModelable {
     var provider: NasaImageProvidable?
     
     var dataSource: ((NasaImage?, UIImage?) -> Void)?
@@ -24,7 +24,7 @@ struct  ImageDetailViewModel: ImageDetailViewModelable {
             ApiKeys.apiKey.rawValue: GlobalConstants.NASA_API_KEY,
         ]
         provider?.getNasaImage(with: parameters, completion: {  (nasaObj, nasaImage)  in
-            self.dataSource?(nasaObj, nasaImage)
+            self.dataSource!(nasaObj, nasaImage)
         })
     }
     

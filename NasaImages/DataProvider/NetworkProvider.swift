@@ -75,7 +75,7 @@ class NetworkProvider: Providable {
     private func route<T: Codable>(for type: T.Type) -> String {
         switch type {
         case is NasaImage.Type:
-            return "planetary/apod"
+            return "/planetary/apod"
         default:
             return ""
         }

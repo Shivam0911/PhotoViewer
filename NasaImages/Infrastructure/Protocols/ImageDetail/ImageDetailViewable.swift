@@ -9,6 +9,6 @@ import UIKit
 
 protocol ImageDetailViewable: AnyObject {
     var viewModel: ImageDetailViewModelable? { get set }
-    var photoImageView: UIImageView? { get set }
-    var descriptionLabel: UILabel? { get set }
+    var photoImageView: UIImageView! { get set }
+    var descriptionLabel: UILabel! { get set }
 }

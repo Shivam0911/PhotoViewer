@@ -10,16 +10,19 @@ import UIKit
 
 class NasaImageProvider: NasaImageProvidable {
    
-    private let imageCache = NSCache<NSString, UIImage>()
+    static var imageCache = NSCache<NSString, UIImage>()
     var provider: Providable?
 
+    init() {
+        provider = NetworkProvider()
+    }
     func getNasaImage(with params: JSONDictionary, completion: @escaping (NasaImage?, UIImage?) -> Void) {
         provider?.get(with: params, NasaImage.self) { [weak self] nasaObj in
             guard let nasaObj = nasaObj else {
                 completion(nil, nil)
                 return
             }
-            if let cachedImage = self?.imageCache.object(forKey: nasaObj.hdurl as NSString) {
+            if let cachedImage = NasaImageProvider.imageCache.object(forKey: nasaObj.hdurl as NSString) {
                 completion(nasaObj, cachedImage)
             } else {
             self?.provider?.getImage(nasaObj.hdurl) { image in
@@ -27,7 +30,7 @@ class NasaImageProvider: NasaImageProvidable {
                     completion(nil, nil)
                     return
                 }
-                self?.imageCache.setObject(image, forKey: nasaObj.hdurl as NSString)
+                NasaImageProvider.imageCache.setObject(image, forKey: nasaObj.hdurl as NSString)
                 completion(nasaObj, image)
             }
         }
