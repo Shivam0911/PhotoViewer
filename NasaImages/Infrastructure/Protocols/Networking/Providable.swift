@@ -8,6 +8,6 @@
 import UIKit
 
 protocol Providable {
-    func get<T: Codable>(_ type: T.Type, completion: @escaping (T?) -> Void)
+    func get<T: Codable>(with params: JSONDictionary, _ type: T.Type, completion: @escaping (T?) -> Void)
     func getImage(_ identifier: String, completion: @escaping (UIImage?) -> Void)
 }

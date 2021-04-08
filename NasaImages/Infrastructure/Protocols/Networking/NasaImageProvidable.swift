@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ContactProvidable {
+protocol NasaImageProvidable {
     var provider: Providable? { get set }
-    func getNasaImage(completion: @escaping (NasaImage?, UIImage?) -> Void)
+    func getNasaImage(with params: JSONDictionary, completion: @escaping (NasaImage?, UIImage?) -> Void)
 }
