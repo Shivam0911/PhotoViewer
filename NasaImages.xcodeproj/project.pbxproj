@@ -15,6 +15,9 @@
 		C1AB2D45261EA88300EF42E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AB2D43261EA88300EF42E6 /* LaunchScreen.storyboard */; };
 		C1AB2D50261EA88400EF42E6 /* NasaImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2D4F261EA88400EF42E6 /* NasaImagesTests.swift */; };
 		C1AB2D5B261EA88400EF42E6 /* NasaImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2D5A261EA88400EF42E6 /* NasaImagesUITests.swift */; };
+		C1AB2D74261EACBF00EF42E6 /* NasaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2D73261EACBF00EF42E6 /* NasaImage.swift */; };
+		C1AB2D7F261EB00A00EF42E6 /* Providable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2D7E261EB00A00EF42E6 /* Providable.swift */; };
+		C1AB2D84261EB04100EF42E6 /* NasaImageProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB2D83261EB04100EF42E6 /* NasaImageProvidable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		C1AB2D56261EA88400EF42E6 /* NasaImagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NasaImagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1AB2D5A261EA88400EF42E6 /* NasaImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImagesUITests.swift; sourceTree = "<group>"; };
 		C1AB2D5C261EA88400EF42E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1AB2D73261EACBF00EF42E6 /* NasaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImage.swift; sourceTree = "<group>"; };
+		C1AB2D7E261EB00A00EF42E6 /* Providable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providable.swift; sourceTree = "<group>"; };
+		C1AB2D83261EB04100EF42E6 /* NasaImageProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImageProvidable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		C1AB2D37261EA88200EF42E6 /* NasaImages */ = {
 			isa = PBXGroup;
 			children = (
+				C1AB2D7A261EAFA300EF42E6 /* Infrastructure */,
+				C1AB2D79261EAF8600EF42E6 /* DataProvider */,
 				C1AB2D6E261EAADE00EF42E6 /* Features */,
 				C1AB2D38261EA88200EF42E6 /* AppDelegate.swift */,
 				C1AB2D3A261EA88200EF42E6 /* SceneDelegate.swift */,
@@ -148,6 +156,7 @@
 		C1AB2D70261EAB0C00EF42E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C1AB2D73261EACBF00EF42E6 /* NasaImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +175,46 @@
 				C1AB2D3E261EA88200EF42E6 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C1AB2D79261EAF8600EF42E6 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		C1AB2D7A261EAFA300EF42E6 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C1AB2D7C261EAFC300EF42E6 /* Extensions */,
+				C1AB2D7B261EAFB800EF42E6 /* Protocols */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C1AB2D7B261EAFB800EF42E6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C1AB2D7D261EAFFA00EF42E6 /* Networking */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C1AB2D7C261EAFC300EF42E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C1AB2D7D261EAFFA00EF42E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C1AB2D7E261EB00A00EF42E6 /* Providable.swift */,
+				C1AB2D83261EB04100EF42E6 /* NasaImageProvidable.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1AB2D84261EB04100EF42E6 /* NasaImageProvidable.swift in Sources */,
+				C1AB2D74261EACBF00EF42E6 /* NasaImage.swift in Sources */,
+				C1AB2D7F261EB00A00EF42E6 /* Providable.swift in Sources */,
 				C1AB2D3D261EA88200EF42E6 /* ViewController.swift in Sources */,
 				C1AB2D39261EA88200EF42E6 /* AppDelegate.swift in Sources */,
 				C1AB2D3B261EA88200EF42E6 /* SceneDelegate.swift in Sources */,
